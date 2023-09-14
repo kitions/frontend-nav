@@ -14,7 +14,7 @@ export interface SidebarProps {
 export function Sidebar({ className, navItems }: SidebarProps) {
   const [activeTabId, setActiveTabId] = useState(navItems[0]?.id || "");
   useEffect(() => {
-    const ele = document.getElementById(activeTabId);
+    const ele = document.getElementById(String(activeTabId));
     const elePosition = (ele?.getBoundingClientRect().top || 0);
     const offsetPosition = elePosition + window.pageYOffset - 75;
     window.scrollTo({

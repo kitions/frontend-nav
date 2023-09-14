@@ -32,10 +32,12 @@ export const authOptions: NextAuthOptions = {
       clientId: process.env.MEDIUM_CLIENT_ID,
       clientSecret: process.env.MEDIUM_CLIENT_SECRET
     }),
+
     CredentialsProvider({
       name: "Credentials",
       credentials: {
         email: { label: "Email", type: "email" },
+        // username: { label: "Username", type: "text" },
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
@@ -52,7 +54,11 @@ export const authOptions: NextAuthOptions = {
         if (!user || !(await compare(password, user.password!))) {
           throw new Error("Invalid username or password");
         }
-        return user;
+
+        return {
+          ...user,
+          id: String(user.id)
+        };
       },
     })
   ],
