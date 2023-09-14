@@ -3,13 +3,12 @@ import GoogleProvider from "next-auth/providers/google";
 import GitHubProvider from "next-auth/providers/github";
 import FacebookProvider from "next-auth/providers/facebook";
 import MediumProvider from "next-auth/providers/medium";
-
+import prisma from "lib/db"
 import CredentialsProvider from "next-auth/providers/credentials";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
-import { PrismaClient } from "@prisma/client";
+
 import { compare } from "bcrypt";
 
-const prisma = new PrismaClient();
 
 // API回调地址分别是/api/auth/github 和 /api/auth/google
 
