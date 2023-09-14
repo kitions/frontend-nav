@@ -34,6 +34,8 @@ export function UserAuthForm({ className, type, ...props }: UserAuthFormProps) {
   const [isLoading, setIsLoading] = React.useState<boolean>(false)
   const [isGitHubLoading, setIsGitHubLoading] = React.useState<boolean>(false)
   const [isGoogleLoading, setIsGoogleLoading] = React.useState<boolean>(false)
+  const [isMediumLoading, setIsMediumLoading] = React.useState<boolean>(false)
+  const [isFacebookLoading, setIsFacebookLoading] = React.useState<boolean>(false)
   const searchParams = useSearchParams()
 
   async function onSubmit(data: FormData) {
@@ -189,8 +191,44 @@ export function UserAuthForm({ className, type, ...props }: UserAuthFormProps) {
           )}{" "}
           Google
         </button>
+        <button
+          type="button"
+          className={cn(buttonVariants({ variant: "outline" }))}
+          onClick={() => {
+            setIsMediumLoading(true)
+            signIn("medium", {
+              callbackUrl: searchParams?.get("from") || "/",
+            })
+          }}
+          disabled={isLoading || isMediumLoading}
+        >
+          {isMediumLoading ? (
+            <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+          ) : (
+            <Icons.medium className="text-18 mr-2 h-4 w-4" />
+          )}{" "}
+          Medium
+        </button>
+        <button
+          type="button"
+          className={cn(buttonVariants({ variant: "outline" }))}
+          onClick={() => {
+            setIsFacebookLoading(true)
+            signIn("facebook", {
+              callbackUrl: searchParams?.get("from") || "/",
+            })
+          }}
+          disabled={isLoading || isFacebookLoading}
+        >
+          {isFacebookLoading ? (
+            <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+          ) : (
+            <Icons.facebook className="text-18 mr-2 h-4 w-4" />
+          )}{" "}
+          Facebook
+        </button>
       </div>
-      
+
     </div>
   )
 }

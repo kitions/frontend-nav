@@ -1,12 +1,17 @@
 import NextAuth, { type NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import GitHubProvider from "next-auth/providers/github";
+import FacebookProvider from "next-auth/providers/facebook";
+import MediumProvider from "next-auth/providers/medium";
+
 import CredentialsProvider from "next-auth/providers/credentials";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { PrismaClient } from "@prisma/client";
 import { compare } from "bcrypt";
 
 const prisma = new PrismaClient();
+
+// API回调地址分别是/api/auth/github 和 /api/auth/google
 
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
@@ -18,6 +23,14 @@ export const authOptions: NextAuthOptions = {
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+    }),
+    FacebookProvider({
+      clientId: process.env.FACEBOOK_CLIENT_ID!,
+      clientSecret: process.env.FACEBOOK_CLIENT_SECRET!
+    }),
+    MediumProvider({
+      clientId: process.env.MEDIUM_CLIENT_ID,
+      clientSecret: process.env.MEDIUM_CLIENT_SECRET
     }),
     CredentialsProvider({
       name: "Credentials",

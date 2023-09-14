@@ -1,9 +1,3 @@
-<p align="center">
-  <a href="https://webnav.codefe.top/">
-    <img alt="Example demo page" src="https://cos.codefe.top/images/webnav-screenshot-demo.png" width="680">
-  </a>
-</p>
-
 ## WebNav
 
 Front-end navigation website, used to collect high-quality front-end related websites from both domestic and foreign sources for convenient personal use
@@ -20,7 +14,7 @@ Front-end navigation website, used to collect high-quality front-end related web
 - Dark mode with **`next-themes`**
 - Authentication using **NextAuth.js**
 - ORM using **Prisma**
-- MySQL Database on **PlanetScale**
+- Postgresql Database on **Supabase**
 - Written in **TypeScript**
 
 ## Deploy Your Own
@@ -35,7 +29,7 @@ You can clone & deploy it to Vercel with one click:
 - [x] Authentication
 - [x] Adapt to mobile devices
 - [x] One click deploy
-- [ ] And animation by use Framer Motion 
+- [ ] And animation by use Framer Motion
 - [ ] User like and collection
 
 

@@ -5,7 +5,7 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ['cos.codefe.top'],
+    domains: ['tuchuang-1253437688.cos.ap-shanghai.myqcloud.com'],
   }
 }
 
