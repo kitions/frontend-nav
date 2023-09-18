@@ -24,4 +24,8 @@ export default async function getNavLinks() {
   return res;
 }
 
-export type CategoryWithLinks = Prisma.PromiseReturnType<typeof getNavLinks>
+type ThenArg<T> = T extends PromiseLike<infer U> ? U : T
+type UsersWithPosts = ThenArg<ReturnType<typeof getNavLinks>>
+
+export type CategoryWithLinks = UsersWithPosts
+// export type CategoryWithLinks = Prisma.PromiseReturnType<typeof getNavLinks>

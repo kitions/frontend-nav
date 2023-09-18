@@ -553,5 +553,5 @@ export async function GET() {
         ]
     }
 ]
-  return NextResponse.json(linkData);
+  return NextResponse.json(links);
 }
