@@ -25,7 +25,7 @@ export default async function IndexPage() {
         <Sidebar navItems={navItems} />
       </div>
       <div className="sm:pl-[16rem]">
-        {/* @ts-expect-error Async Server Component */}
+        {/* @ts-expect-error Server Component */}
         <SiteHeader navItems={navItems} />
         <LinkContent navResources={navResources} />
         <SiteFooter />
