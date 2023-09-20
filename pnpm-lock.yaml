@@ -29,6 +29,9 @@ dependencies:
   '@types/bcrypt':
     specifier: ^5.0.0
     version: registry.npmmirror.com/@types/bcrypt@5.0.0
+  '@vercel/analytics':
+    specifier: ^1.0.2
+    version: registry.npmmirror.com/@vercel/analytics@1.0.2
   bcrypt:
     specifier: ^5.1.0
     version: registry.npmmirror.com/bcrypt@5.1.1
@@ -1777,6 +1780,12 @@ packages:
       '@typescript-eslint/types': registry.npmmirror.com/@typescript-eslint/types@5.62.0
       eslint-visitor-keys: registry.npmmirror.com/eslint-visitor-keys@3.4.3
     dev: true
+
+  registry.npmmirror.com/@vercel/analytics@1.0.2:
+    resolution: {integrity: sha512-BZFxVrv24VbNNl5xMxqUojQIegEeXMI6rX3rg1uVLYUEXsuKNBSAEQf4BWEcjQDp/8aYJOj6m8V4PUA3x/cxgg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vercel/analytics/-/analytics-1.0.2.tgz}
+    name: '@vercel/analytics'
+    version: 1.0.2
+    dev: false
 
   registry.npmmirror.com/abbrev@1.1.1:
     resolution: {integrity: sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/abbrev/-/abbrev-1.1.1.tgz}
